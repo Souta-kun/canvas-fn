@@ -2,9 +2,9 @@ import { addCardCase, deleteCardCase, moveCardCase, updateCardCase, } from "../.
 import { fail, ok } from "../dtos/api-result.dto.js";
 // POST → ADD_CARD
 export const addCard = async (req, res) => {
-    const { boardId, columnId, title, createdAt } = req.body;
+    const { id, boardId, columnId, title, createdAt } = req.body;
     try {
-        const card = await addCardCase(boardId, columnId, title, createdAt);
+        const card = await addCardCase(id, boardId, columnId, title, createdAt);
         return ok(res, 201, card);
     }
     catch (error) {
