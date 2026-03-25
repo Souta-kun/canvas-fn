@@ -7,11 +7,11 @@ const allowedOrigins = config.ALLOW_ORIGINS.split(",");
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (allowedOrigins.includes(origin || "")) {
-        return callback(null, true);
-      }
-      console.error(`Origen no permitido por CORS: ${origin}`);
-      return callback(new Error("No permitido por CORS"));
+      // if (allowedOrigins.includes(origin || "")) {
+      return callback(null, true);
+      // }
+      // console.error(`Origen no permitido por CORS: ${origin}`);
+      // return callback(new Error("No permitido por CORS"));
     },
   }),
 );
